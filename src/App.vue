@@ -4,11 +4,13 @@ import Calculator from "@/components/Calculator.vue";
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <Calculator />
-    </div>
-  </header>
+  <div class="header">
+    <h1>Kalkulator karetki</h1>
+  </div>
+
+  <div class="wrapper">
+    <Calculator />
+  </div>
 </template>
 
 <style>
@@ -17,6 +19,19 @@ import Calculator from "@/components/Calculator.vue";
 body {
   background-image: url("./assets/background.jpg");
   background-size: cover;
+  display: flex;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-content: top;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 #app {
@@ -28,12 +43,6 @@ body {
 header {
   line-height: 1.5;
   max-height: 100vh;
-}
-
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
 }
 
 @media (hover: hover) {
@@ -67,32 +76,13 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: flex;
-    place-items: center;
-  }
-
-  header {
-    display: flex;
-    place-items: center;
-  }
-
-  .wrapper {
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+body {
+  /* display: flex; */
+  /* place-items: center; */
 }
+
+/* #app {
+  display: flex;
+  place-items: center;
+} */
 </style>

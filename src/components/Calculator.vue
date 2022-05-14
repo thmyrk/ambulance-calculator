@@ -85,6 +85,7 @@ export default {
 </template>
 
 <style scoped>
+
 .row input {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -110,6 +111,4 @@ h3 {
   color: black;
 }
 
-@media (min-width: 1024px) {
-}
 </style>
