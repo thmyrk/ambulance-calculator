@@ -20,6 +20,7 @@ body {
   background-image: url("./assets/background.jpg");
   background-size: cover;
   display: flex;
+  color: black;
 }
 
 .header {
