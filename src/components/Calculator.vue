@@ -41,37 +41,46 @@ export default {
 <template>
     <div class="calculator">
         <div class="row">
-            Ilość minut 1
+            <div class="which-days">
+                Dni powszednie:
+            </div>
+        </div>
+        <div class="row">
+            Ilość minut
             <input type="number" v-model="minutesNumber1" placeholder="Ilość godzin" />
             po stawce godzinowej
             <input type="number" v-model="hourlyRate1" placeholder="Stawka godzinowa 1" />
+            = {{ calculateMinutes(minutesNumber1, hourlyRate1).toFixed(2) }} zł
         </div>
         <div class="row">
-            Ilość minut 2
-            <input type="number" v-model="minutesNumber2" placeholder="Ilość godzin" />
-            po stawce godzinowej
-            <input type="number" v-model="hourlyRate2" placeholder="Stawka godzinowa 1" />
-        </div>
-        <div class="row">
-            Ilość godzin 1
+            Ilość godzin
             <input type="number" v-model="hoursNumber1" placeholder="Ilość godzin" />
             po stawce godzinowej
             <input type="number" v-model="hourlyRate3" placeholder="Stawka godzinowa 1" />
+            = {{ calculateHours(hoursNumber1, hourlyRate3).toFixed(2) }} zł
         </div>
         <div class="row">
-            Ilość godzin 2
+            <div class="which-days">
+                Dni świąteczne:
+            </div>
+        </div>
+        <div class="row">
+            Ilość minut
+            <input type="number" v-model="minutesNumber2" placeholder="Ilość godzin" />
+            po stawce godzinowej
+            <input type="number" v-model="hourlyRate2" placeholder="Stawka godzinowa 1" />
+            = {{ calculateMinutes(minutesNumber2, hourlyRate2).toFixed(2) }} zł
+        </div>
+        <div class="row">
+            Ilość godzin
             <input type="number" v-model="hoursNumber2" placeholder="Ilość godzin" />
             po stawce godzinowej
             <input type="number" v-model="hourlyRate4" placeholder="Stawka godzinowa 2" />
+            = {{ calculateHours(hoursNumber2, hourlyRate4).toFixed(2) }} zł
         </div>
 
         <div id="calculation-result">
             <h3>
-                Suma z {{ minutesNumber1 }} minut po stawce godzinowej {{ hourlyRate1 }} to {{ calculateMinutes(minutesNumber1, hourlyRate1).toFixed(2) }} zł<br>
-                Suma z {{ minutesNumber2 }} minut po stawce godzinowej {{ hourlyRate2 }} to {{ calculateMinutes(minutesNumber2, hourlyRate2).toFixed(2) }} zł<br>
-                Suma z {{ hoursNumber1 }} godzin po stawce godzinowej {{ hourlyRate3 }} to {{ calculateHours(hoursNumber1, hourlyRate3).toFixed(2) }} zł<br>
-                Suma z {{ hoursNumber2 }} godzin po stawce godzinowej {{ hourlyRate4 }} to {{ calculateHours(hoursNumber2, hourlyRate4).toFixed(2) }} zł<br>
-
                 Dodana całość: {{
                     this.calculateResult(
                         minutesNumber1, minutesNumber2,
@@ -100,8 +109,12 @@ export default {
     margin-bottom: 0.5rem;
 }
 
-.calculation-result {
-    /* width: 100% */
+.which-days {
+    font-weight: 700;
+}
+
+.calculator {
+    font-size: 1.2rem;
 }
 
 h3 {
