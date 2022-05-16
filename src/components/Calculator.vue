@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, computed } from "vue";
+import { ref } from "vue";
 const hourlyRate1 = ref(12);
 const hourlyRate2 = ref(14);
 const hourlyRate3 = ref(12);
