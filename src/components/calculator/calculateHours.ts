@@ -1,0 +1,1 @@
+export function calculateHours(hours: number, rate: number) { return hours * rate; }

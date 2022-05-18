@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { calculateMinutes } from "./calculator/calculateMinutes";
+import { calculateHours } from "./calculator/calculateHours";
+import { calculateTime } from "./calculator/calculateTime"
+
 const hourlyRate1 = ref(12);
 const hourlyRate2 = ref(14);
 const hourlyRate3 = ref(12);
@@ -8,29 +12,6 @@ const minutesNumber1 = ref(0);
 const minutesNumber2 = ref(0);
 const hoursNumber1 = ref(0);
 const hoursNumber2 = ref(0);
-
-const calculateMinutes = (minutes: number, rate: number) =>
-  minutes * (rate / 60);
-const calculateHours = (hours: number, rate: number) => hours * rate;
-
-const calculateResult = (
-  minutes1: number,
-  minutes2: number,
-  hours1: number,
-  hours2: number,
-  rate1: number,
-  rate2: number,
-  rate3: number,
-  rate4: number
-) => {
-  const result =
-    calculateMinutes(minutes1, rate1) +
-    calculateMinutes(minutes2, rate2) +
-    calculateHours(hours1, rate3) +
-    calculateHours(hours2, rate4);
-
-  return result;
-};
 </script>
 
 <template>
@@ -98,7 +79,7 @@ const calculateResult = (
       <h3>
         Dodana całość:
         {{
-          calculateResult(
+          calculateTime(
             minutesNumber1,
             minutesNumber2,
             hoursNumber1,
